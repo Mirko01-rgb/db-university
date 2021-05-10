@@ -1,0 +1,98 @@
+Sulla base di quanto visto a lezione modellizzare la realta' di un'universita' definendo colonne con nome, tipo di dato e vincoli di integrita' per queste entita':
+- dipartimento
+- corso di laurea
+- corso
+- insegnante
+- appello
+- studento
+- esito
+
+
+DIPARTIMENTO
+
+descrizione: TEXT ; NOT NULLABLE
+totali_corsi_laurea_disponibili:TEXT; NOT NULLABLE
+direttore: VARCHAR ; NOT NULLABLE
+riconoscimenti: TEXT; NOT NULLABLE
+contatti: VARCHAR; NOT NULLABLE
+sede: VARCHAR; NOT NULLABLE
+requisiti_minimi: TEXT; NOT NULLABLE
+
+
+
+CORSO LAUREA
+
+durata_laurea: VARCHAR; NOT NULLABLE
+tipologia_laurea: TEXT; NOT NULLABLE
+totali_corsi: TEXT; NOT NULLABLE
+sede: VARCHAR; NOT NULLABLE
+tempo_per_conseguimento_laurea: TINYINT; NOT NULLABLE
+numero_ammessioni: INT ; NOT NULLABLE
+materiale_didattico: TEXT ; NOT NULLABLE
+
+
+
+CORSO
+
+durata_corso: VARCHAR(64); NOT NULLABLE
+numero_ore_obbligatorie: INT; NOT_NULLABLE
+sede: VARCHAR; NULLABLE
+materia: VARCHAR(64); NOT NULLABLE
+numero_ore_totali: INT; NOT_NULLABLE
+argomenti_corso: TEXT; NULLABLE
+
+
+
+INSEGNANTE:
+
+nome: VARCHAR(64) ; NOT NULLABLE
+cognome: VARCHAR(64) ; NOT NULLABLE
+email: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+indirizzo: VARCHAR ; NOT NULLABLE
+n_tel: VARCHAR(32) ; NULLABLE
+data_nascita: DATE ; NOT NULLABLE
+luogo_nascita: VARCHAR(64) ; NOT NULLABLE
+cf: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+genere: VARCHAR(16) ; NOT NULLABLE
+data_assunzione: DATE ; NOT NULLABLE
+orario_lezione: VARCHAR(128) ; NULLABLE
+ruolo: VARCHAR(32) ; NOT NULLABLE
+salario: INT ; NOT NULLABLE
+tipo_contratto: VARCHAR(64) ; NOT NULLABLE
+foto: VARCHAR ; NOT NOT_NULLABLE
+corsi_gestiti: VARCHAR ; NOT NULLABLE
+
+
+APPELLO:
+
+id_studente: INT; NOT NULLABLE(PRIMARY KEY)
+nome_studente: VARCHAR (64) ; NOT NULLABLE
+cognome_studente: VARCHAR (64) ; NOT NULLABLE
+data_appello: DATE ; NOT NULLABLE
+materia: VARCHAR (128) ; NOT NULLABLE
+
+
+
+STUDENTE
+
+id_studente: INT; NOT NULLABLE(PRIMARY KEY)
+nome: VARCHAR(64) ; NOT NULLABLE
+cognome: VARCHAR(64) ; NOT NULLABLE
+email: VARCHAR(128) ; NOT NULLABLE ; UNIQUE
+indirizzo: VARCHAR ; NOT NULLABLE
+n_tel: VARCHAR(32) ; NULLABLE
+data_nascita: DATE ; NOT NULLABLE
+luogo_nascita: VARCHAR(64) ; NOT NULLABLE
+cf: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
+genere: VARCHAR(16) ; NOT NULLABLE
+corsi_inscritto: VARCHAR; NOT NULLABLE
+docente_assegnato: VARCHAR(64); NULLABLE
+
+
+
+ESITO
+
+voto_scritto: TINYINT; NOT NULLABLE
+voto_orale: TINYINT; NOT NULLABLE
+media_voto_orale_scritto:  TINYINT; NOT NULLABLE
+accettato_rifiutato: VARCHAR(64) ; NOT NULLABLE

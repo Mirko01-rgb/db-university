@@ -64,10 +64,6 @@ corsi_gestiti: VARCHAR ; NOT NULLABLE
 
 
 APPELLO:
-
-id_studente: INT; NOT NULLABLE(PRIMARY KEY)
-nome_studente: VARCHAR (64) ; NOT NULLABLE
-cognome_studente: VARCHAR (64) ; NOT NULLABLE
 data_appello: DATE ; NOT NULLABLE
 materia: VARCHAR (128) ; NOT NULLABLE
 
@@ -86,7 +82,7 @@ luogo_nascita: VARCHAR(64) ; NOT NULLABLE
 cf: VARCHAR(64) ; NOT NULLABLE ; UNIQUE
 genere: VARCHAR(16) ; NOT NULLABLE
 corsi_inscritto: VARCHAR; NOT NULLABLE
-docente_assegnato: VARCHAR(64); NULLABLE
+
 
 
 
